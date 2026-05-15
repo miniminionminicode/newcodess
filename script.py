@@ -16,7 +16,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 BASE_URL    = os.getenv("URL_BASE")
 API_BASE    = f"{BASE_URL}/api"
-BATCHES_URL = os.getenv("BATCH_URL")
+BATCHES_URL = os.getenv("DATA_URL")
 
 AUTH_KEY    = "hi"
 AUTH_VAL    = "hi"
@@ -254,9 +254,9 @@ def save_course(course_data):
 # ────────────────────────────────────────────────
 
 def fetch_security_token(path):
-    sunny_url = f"{API_BASE}{SECURE_PATH}?path={path}&method=GET"
+    abc_url = f"{API_BASE}{SECURE_PATH}?path={path}&method=GET"
     try:
-        r = session.get(sunny_url, headers=HEADERS, timeout=10)
+        r = session.get(abc_url, headers=HEADERS, timeout=10)
         print(f"[TOKEN] {path} -> {r.status_code}")
         return r.status_code == 200
     except Exception as e:
